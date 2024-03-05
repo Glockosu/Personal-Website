@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255; /* White text color */
+  --background-start-rgb: 23, 10, 23; /* Close to #0d0a17 */
+  --background-end-rgb: 10, 14, 30; /* A similar dark blue color */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255; /* White text color for dark mode */
+    --background-start-rgb: 13, 10, 23; /* Same as above, or adjust as desired */
+    --background-end-rgb: 10, 14, 30; /* Same as above, or adjust as desired */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+}
+
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  width: 50px; /* Size of the cursor */
+  height: 50px; /* Size of the cursor */
+  border-radius: 150%;
+  background-color: rgba(22, 15, 37, 0.2); /* Slightly transparent white */
+  box-shadow: 0 0 10px 5px rgba(30, 16, 36, 0.5); /* Glowing effect */
+  transform: translate(-50%, -50%); /* Center the circle to cursor point */
+  transition: transform 0.1s, width 0.2s, height 0.2s; /* Smooth transition for moving and hovering */
+  z-index: 9999; /* Ensure it's above everything */
+  display: none; /* Start hidden, display when moving */
+}
+
+/* Main content area */
+.main-content {
+  margin-left: 25%; /* This should be equal to the width of the fixed sidebar */
+  width: 75%; /* This should take up the rest of the space */
+  overflow-y: auto;
+  height: 100vh;
+  padding-left: 1rem; /* Optional: if you want some spacing between the sidebar and content */
+}
+
+.circular-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50rem; /* Adjust the size as needed */
+  height: 50rem; /* Adjust the size as needed */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.sidebar-item {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.sidebar-link {
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-left: 16px; /* Adjust the padding as needed */
+  line-height: 2; /* Adjust the line height as needed */
+  font-weight: 600;
+  letter-spacing: 1px; /* Adjust letter spacing as needed */
+  transition: color 0.3s ease;
+}
+
+.sidebar-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 2px; /* Adjust the height of the underline */
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.sidebar-link:hover::before {
+  width: 30px; /* Adjust the width of the underline on hover */
+}
+
+.sidebar-link:hover {
+  color: #4fd1c5; /* Adjust the color on hover as needed */
+}
+
+/* Ensures the underline doesn't appear until hovered */
+.sidebar-link:not(:hover)::before {
+  width: 0;
+}
+
+/* Specific ID targets for your scroll */
+#about, #experience, #projects {
+  scroll-margin-top: 100px; /* Adjust this to the height of your fixed header or nav */
+}
+
+.circular-background img {
+  width: 40%; /* Adjust the size as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%;
+  opacity: 0.5; /* Adjust the opacity as needed */
+  object-fit: cover;
+}
+
+/* Assuming you're using TailwindCSS for other styles, 
+   but here are the custom styles for the icon containers */
+   .icon-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgb(53, 35, 70); /* Adjust the color as needed */
+    padding: 8px; /* Adjust padding to control the size of the circle */
+    transition: background-color 0.3s, opacity 0.3s;
+    /* Initial opacity */
+    opacity: 0.85;
+  }
+  
+  .button-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    background-color: rgb(53, 35, 70); /* Adjust the color as needed */
+    padding: 8px; /* Adjust padding to control the size of the circle */
+    transition: background-color 0.3s, opacity 0.3s;
+    /* Initial opacity */
+    opacity: 0.85;
+  }
+  
+  .button-container:hover {
+    /* Full opacity on hover */
+    opacity: 1;
+    filter: brightness(1.2); /* Adjust brightness to match your design */
+    /* Optional: Change the background color slightly on hover for a more pronounced effect */
+    background-color: darken(rgb(53, 35, 70), 5%); /* This requires a pre-processor like SASS, or you can manually specify a darker color */
+  }
+
+  .icon-container:hover {
+    /* Full opacity on hover */
+    opacity: 1;
+    filter: brightness(1.2); /* Adjust brightness to match your design */
+    /* Optional: Change the background color slightly on hover for a more pronounced effect */
+    background-color: darken(rgb(53, 35, 70), 5%); /* This requires a pre-processor like SASS, or you can manually specify a darker color */
+  }
+
+  .social-media {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-hover:hover {
+    filter: brightness(50%) saturate(50%) invert(28%) sepia(94%) saturate(3492%) hue-rotate(145deg) brightness(99%) contrast(104%);
+  }
+
+  .social-media:hover {
+    /* Full opacity on hover */
+    opacity: 1;
+    filter: brightness(1.2); /* Adjust brightness to match your design */
+    /* Optional: Change the background color slightly on hover for a more pronounced effect */
+    background-color: darken(rgb(53, 35, 70), 5%); /* This requires a pre-processor like SASS, or you can manually specify a darker color */
+  }
+
+
+.selected-filter-class {
+  transform: scale(1.05);
+  filter: brightness(1.5); /* Adjust color and size to match your design */
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 20px;
+}
+
+.project-card.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.project-image {
+  width: 50%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+@media (max-width: 1008px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding-top: 0;
+    padding-left: 0;
+  }
+
+  .main-content {
+    padding-left: 0 !important;
+  }
+}
+
+
+.project-description {
+  width: 45%;
+  padding: 1rem;
+  background-color: #0a192f; /* Or any other color you prefer */
+  color: white;
+  border-radius: 4px;
+}
+
+.github-link {
+  /* Style your GitHub link here */
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  color: #58a6ff; /* Or any other color you prefer */
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.purple-tint::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(181, 153, 218, 0.363); /* Darkish purple with some opacity */
+  mix-blend-mode: multiply;
+  pointer-events: none; /* Allows click events to pass through */
+  border-radius: 8px 8px 0 0; /* Match the image's border-radius */
+}
+
+.purple-tint:hover::before {
+  background-color: transparent;
+}
+
+.purple-tint {
+  position: relative;
+}
