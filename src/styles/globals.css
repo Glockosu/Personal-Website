@@ -25,6 +25,20 @@ body {
   );
 }
 
+.image-container {
+  position: relative;
+  width: 100%; /* Use 100% of the parent container width */
+  height: 0; /* Collapse the div to nothing */
+  padding-bottom: 41.66%; /* The percentage to maintain aspect ratio based on the original image's width and height (height/width * 100%) */
+}
+
+.image-container img {
+  position: absolute;
+  width: 100%; /* Scale to the width of the parent container */
+  height: 100%; /* Scale to the height of the parent container */
+  object-fit: cover; /* This ensures the image covers the area, you could also use object-fit: contain; */
+}
+
 .cursor {
   pointer-events: none;
   position: fixed;
