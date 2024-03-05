@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // components/Header.jsx
 import Image from 'next/image';
 import Link from 'next/link'; // Import Link from Next.js
@@ -10,7 +11,8 @@ const Header = () => {
                 <div className="flex items-center">
                 {/* Logo Image */}
                 
-                <Image src='/../images/icons/icons8-a-80.png' alt="Logo" width={40} height={40} />
+                <img src='/../images/icons/icons8-a-80.png' alt="Logo" width={40} height={40} />
+                
                 <Link href="/">
                   <span className="ml-3 font-bold text-lg">Alex Johannesson</span>
                 </Link>

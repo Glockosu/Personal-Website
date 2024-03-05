@@ -51,7 +51,7 @@ export default function Home() {
       <div className="sidebar">
         <aside className="sticky top-0 pt-20 pl-0 h-screen flex justify-center md:pl-5 w-128 ">
           <div className="text-center">
-            <Image src="./profile-pic-nice.webp" alt="Alex Johannesson" width={200} height={200} className="mx-auto rounded-md transition-transform transition-filter grayscale hover:grayscale-0 hover:scale-105" />
+            <img src="/../images/local/profile-pic-nice.webp" alt="Alex Johannesson" width={200} height={200} className="mx-auto rounded-md transition-transform transition-filter grayscale hover:grayscale-0 hover:scale-105" />
             <h1 className="text-2xl font-bold mt-4">Alex Johannesson</h1>
             <p className="text-gray-400 mt-4">Software Engineer</p>
             <p className="text-gray-400 mt-2">I build cool stuff, check out my projects below :)</p>
