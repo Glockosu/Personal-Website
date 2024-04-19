@@ -11,17 +11,16 @@ const Header = () => {
                 <div className="flex items-center">
                 {/* Logo Image */}
                 
-                <img src='/../images/icons/icons8-a-80.png' alt="Logo" width={40} height={40} />
-                
-                <Link href="/">
+                <a href="/" className="inline-flex items-center mx-2 hover:-translate-y-1 transition-transform duration-300" target="_blank" rel="noopener noreferrer">
+                  <img src="/../images/icons/icons8-a-80.png" alt="Logo" className="w-10 h-10" />
                   <span className="ml-3 font-bold text-lg">Alex Johannesson</span>
-                </Link>
+                </a>
                 </div>
                 <div className="flex items-center">
                 {/* GitHub Icon */}
                 <button
                   className="bg-transparent border border-white text-white py-2 px-4 rounded hover:bg-teal-700 hover:text-[var(--background-start)] transition-colors duration-300"
-                  onClick={() => window.location.href = 'https://drive.google.com/file/d/1SalYPyueenrhXLIiON2F3ommvObVGqra/view?usp=sharing'}
+                  onClick={() => window.location.href = 'https://drive.google.com/file/d/1AvjZjUyki2XmqB271hDrk2SU9MxH0tnW/view?usp=sharing'}
                 >
                   Resume
                 </button>
