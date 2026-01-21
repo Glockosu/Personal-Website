@@ -2,7 +2,16 @@
 import Image from 'next/image';
 import { FiGithub, FiExternalLink } from 'react-icons/fi'; // Ensure you have react-icons installed
 
-const ProjectCard = ({ title, imageSrc, githubLink, websiteLink, skills, description }) => {
+interface ProjectCardProps {
+  title: string;
+  imageSrc: string;
+  githubLink?: string;
+  websiteLink?: string;
+  skills: string[];
+  description?: string;
+}
+
+const ProjectCard = ({ title, imageSrc, githubLink, websiteLink, skills, description }: ProjectCardProps) => {
     return (
         <div className="max-w-full bg-gray-900 rounded-lg border border-gray-700 shadow-md hover:scale-105 transition-transform duration-300 ease-in-out purple-tint flex flex-col h-full">
         <div className="image-container" style={{ position: 'relative', width: '100%', height: '0', paddingBottom: '41.66%' }}>
