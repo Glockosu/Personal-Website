@@ -20,7 +20,7 @@ const Header = () => {
                 {/* GitHub Icon */}
                 <button
                   className="bg-transparent border border-white text-white py-2 px-4 rounded hover:bg-teal-700 hover:text-[var(--background-start)] transition-colors duration-300"
-                  onClick={() => window.location.href = 'https://drive.google.com/file/d/1AvjZjUyki2XmqB271hDrk2SU9MxH0tnW/view?usp=sharing'}
+                  onClick={() => window.open('/AlexJohannesson_Resume.pdf', '_blank')}
                 >
                   Resume
                 </button>

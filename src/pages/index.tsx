@@ -51,30 +51,33 @@ export default function Home() {
       <div className="sidebar">
         <aside className="sticky top-0 pt-20 pl-0 h-screen flex justify-center md:pl-5 w-128 ">
           <div className="text-center">
-            <img src="/../images/local/profile-pic-nice.webp" alt="Alex Johannesson" width={200} height={200} className="mx-auto rounded-md transition-transform transition-filter grayscale hover:grayscale-0 hover:scale-105" />
-            <h1 className="text-2xl font-bold mt-4">Alex Johannesson</h1>
-            <p className="text-gray-400 mt-4">Software Engineer</p>
-            <p className="text-gray-400 mt-2">I build cool stuff, check out my projects below :)</p>
+            <img src="/../images/local/profile-pic-nice.webp" alt="Alex Johannesson" width={200} height={200} className="mx-auto rounded-md transition-transform transition-filter grayscale hover:grayscale-0 hover:scale-105 will-animate animate-scale-in" />
+            <h1 className="text-2xl font-bold mt-4 will-animate animate-fade-in delay-100">Alex Johannesson</h1>
+            <p className="text-gray-400 mt-4 will-animate animate-fade-in delay-200">Software Engineer</p>
+            <p className="text-gray-400 mt-2 will-animate animate-fade-in delay-300">I build cool stuff, check out my projects below :)</p>
             {/* Sidebar navigation */}
             <nav className="mt-16">
               <ul className="space-y-4">
-                <li className="sidebar-item">
+                <li className="sidebar-item will-animate animate-slide-in-right delay-400">
                   <a href="#about" className="sidebar-link">ABOUT</a>
                 </li>
-                <li className="sidebar-item">
+                <li className="sidebar-item will-animate animate-slide-in-right delay-500">
                   <a href="#skills" className="sidebar-link">SKILLS</a>
                 </li>
-                <li className="sidebar-item">
+                <li className="sidebar-item will-animate animate-slide-in-right delay-600">
                   <a href="#projects" className="sidebar-link">PROJECTS</a>
                 </li>
-                <li className="sidebar-item">
+                <li className="sidebar-item will-animate animate-slide-in-right" style={{animationDelay: '0.7s'}}>
                   <a href="#experience" className="sidebar-link">EXPERIENCE</a>
+                </li>
+                <li className="sidebar-item will-animate animate-slide-in-right" style={{animationDelay: '0.8s'}}>
+                  <a href="/AlexJohannesson_Resume.pdf" target="_blank" rel="noopener noreferrer" className="sidebar-link">RESUME</a>
                 </li>
               </ul>
             </nav>
 
             {/* Social icons section */}
-            <div className="mt-40">
+            <div className="mt-40 will-animate animate-fade-in" style={{animationDelay: '0.9s'}}>
               <a href="https://github.com/alexjohannesson" className="inline-block mx-2 hover:-translate-y-1 transition-transform duration-300" target="_blank" rel="noopener noreferrer">
                 {/* Replace with your GitHub icon */}
                 <img src="/../images/icons/icons8-github-50.png" alt="GitHub" className="w-6 h-6 icon-hover" />
@@ -84,10 +87,6 @@ export default function Home() {
                 <img src="/../images/icons/icons8-linkedin-50.png" alt="LinkedIn" className="w-6 h-6 icon-hover" />
               </a>
               {/* Add more icons as needed */}
-              <a href="https://x.com/alexJohannesson12" className="inline-block mx-2 hover:-translate-y-1 transition-transform duration-300" target="_blank" rel="noopener noreferrer">
-                {/* Replace with your X icon or any other social platform */}
-                <img src="/../images/icons/icons8-twitterx-50.png" alt="X" className="w-6 h-6 icon-hover" />
-              </a>
               <a href="mailto:alejohannesson@gmail.com" className="social-media inline-block mx-2 hover:-translate-y-1 transition-transform duration-300" target="_blank" rel="noopener noreferrer">
                 {/* Replace with your X icon or any other social platform */}
                 <img src="/../images/icons/icons8-mail-48.png" alt="mail" className="w-6 h-6 icon-hover" />
@@ -100,7 +99,7 @@ export default function Home() {
       {/* Main content container */}
       <main className="flex-1 container mx-auto items-start content-start px-4 custom:pl-20 custom:mr-40 pt-[/* same as header height plus any additional space */]">
         {/* About Section */}
-        <section id="about" className="my-8 pt-10">
+        <section id="about" className="my-8 pt-10 will-animate animate-fade-in-up">
             <p className="text-lg text-gray-400">
                 Hi, I'm <span className="text-white">Alex Johannesson</span>. I've been passionate about <span className="text-white">technology</span>, from tinkering with computers to gaming, since childhood. My early curiosity sparked my love for <span className="text-white">coding</span> and <span className="text-white">software development</span>.
             </p>
@@ -111,7 +110,7 @@ export default function Home() {
                 Outside work, I'm exploring the latest <span className="text-white">game releases</span> or dabbling with <span className="text-white">ai</span> and <span className="text-white">machine learning</span> models. These hobbies fuel my professional innovation, continually inspiring fresh ideas for new <span className="text-white">projects</span>.
             </p>
         </section>
-        <section id="skills" className="px-0 py-8">
+        <section id="skills" className="px-0 py-8 will-animate animate-fade-in-up delay-100">
           <h2 className="text-2xl font-bold mb-4">Skills</h2>
           <div className="border-b border-gray-600 mb-5"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -155,15 +154,45 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="px-0 py-8">
+        <section id="projects" className="px-0 py-8 will-animate animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4">Projects</h2>
           <div className="border-b border-gray-600 mb-5"></div>
           <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4">
             <ProjectCard
+              title="Cedarvo"
+              imageSrc="/../images/projects/cedarvo.png"
+              websiteLink="https://cedarvo.com"
+              description="Web development company specializing in modern, scalable web applications and digital solutions."
+              skills={['Web Development', 'Full-Stack', 'Client Solutions', 'Project Management']}
+            />
+            <ProjectCard
+              title="Typojam"
+              imageSrc="/../images/projects/typo.png"
+              websiteLink="https://waffwrw.itch.io/typojam"
+              description="A rhythm typing game where you type to the song's rhythm. Features a level editor, customizable themes, and LastFM integration. Currently on Unity, transitioning to osu!framework with web integration, Supabase database, and Cloudflare R2 storage."
+              skills={['Unity', 'osu!framework', 'Supabase', 'Cloudflare R2', 'Game Development', 'Level Editor']}
+            />
+            <ProjectCard
+              title="FNaF Max Mode List"
+              imageSrc="/../images/projects/fnaf.png"
+              websiteLink="https://fnafmml.glockbhop.workers.dev/"
+              description="The official FNaF Max Mode List - a collaborative community project ranking the hardest possible modes from FNaF games, fangames, and mods. Features leaderboards, user submissions, comprehensive admin panel, and fully customizable user profiles."
+              skills={['Cloudflare Workers', 'Full-Stack', 'Admin Dashboard', 'Supabase', 'Community Platform']}
+            />
+            <ProjectCard
+              title="MemSum Enhancements"
+              imageSrc="/../images/projects/extractive.png"
+              githubLink="https://github.com/Glockosu/MemSum-Enhancements"
+              websiteLink="/../MemSum__Proposal_for_Improving_MemSum_model_for_Extractive_Text_Summarization.pdf"
+              description="Enhanced extractive text summarization model integrating Local Sentence Encoder (LSE) and Global Context Encoder (GCE) with GloVe embeddings. Features dynamic TF-IDF post-processing and advanced LSTM/GNN configurations for improved summary coherence."
+              skills={['Machine Learning', 'NLP', 'Python', 'LSTM', 'GNN', 'TF-IDF', 'GloVe']}
+            />
+            <ProjectCard
               title="MimiBot App"
               imageSrc="/../images/projects/rsz_mimibot-app.png"
               githubLink="https://github.com/Glockosu/mimibot"
-              skills={['Next.js', 'Tailwind CSS', 'TypeScript', 'Node.js', 'Discord API']}
+              description="Discord bot for Tower of Fantasy featuring real-time character insights, statistical analysis, and damage calculation algorithms."
+              skills={['Node.js', 'Discord API', 'TypeScript', 'API Integration']}
             />
             <ProjectCard
               title="Terrain Modeling"
@@ -181,7 +210,7 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="px-0 py-8">
+        <section id="experience" className="px-0 py-8 will-animate animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4">Experience</h2>
           <div className="border-b border-gray-600 mb-5"></div>
           {/* Experience item */}
@@ -214,7 +243,7 @@ export default function Home() {
         </section>
   
         {/* Contact Section */}
-        <section id="contact" className="px-0 py-8">
+        <section id="contact" className="px-0 py-8 will-animate animate-fade-in-up delay-400">
           <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
           <div className="border-b border-gray-600 mb-5"></div>
           <p className="mb-5 text-gray-400">If you're interested in working together or just want to say hi, don't hesitate to reach out. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
